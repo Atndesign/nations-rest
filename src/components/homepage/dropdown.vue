@@ -3,12 +3,12 @@
     <div class="dropdown__select">
       Filter by region
     </div>
-    <ul class="dropdown__list">
+    <!-- <ul class="dropdown__list">
       <li class="list__item">Africa</li>
       <li class="list__item">America</li>
       <li class="list__item">Asia</li>
       <li class="list__item">Europe</li>
-    </ul>
+    </ul> -->
   </div>
 </template>
 

@@ -1,0 +1,38 @@
+.flag-list {
+  list-style: none;
+  padding: 0 (56 / 14) * 1em;
+  .country-card {
+    color: $dark-text-light-elements;
+    background-color: $dark-elements;
+    margin-bottom: (40 / 14) * 1em;
+    border-radius: 6px;
+    overflow: hidden;
+    .country-card__cover {
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      height: (200 / 14) * 1em;
+
+      margin-bottom: (30 / 14) * 1em;
+    }
+    .country-card__content {
+      padding: (24 / 14) * 1em;
+      padding-bottom: (49 / 14) * 1em;
+    }
+    .country-card__name {
+      font-size: 18px;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+      margin-bottom: (26 / 14) * 1em;
+    }
+    .country-card__infos {
+      .infos__name {
+        font-weight: 600;
+        margin-bottom: 1em;
+      }
+      .infos__value {
+        font-weight: 300;
+      }
+    }
+  }
+}
