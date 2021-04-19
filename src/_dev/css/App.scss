@@ -9,8 +9,10 @@
   font-family: "Nunito Sans", sans-serif;
 }
 body {
+  background-color: $dark-background;
 }
 
 //Components
 @import "./components/header.scss";
+@import "./components/searchbar.scss";
 //Common
