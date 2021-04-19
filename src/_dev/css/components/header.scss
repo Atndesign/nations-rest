@@ -1,10 +1,17 @@
 .header {
+  display: flex;
+  background-color: $dark-elements;
+  justify-content: space-between;
+  padding: (34 / 14) * 1em (16 / 14) * 1em;
+  color: $dark-text-light-elements;
   .header__text {
+    letter-spacing: 0.01em;
   }
   .header__dark-mode {
     .dark-mode__btn {
     }
     .dark-mode__text {
+      font-size: (12 / 14) * 1em;
     }
   }
 }

@@ -1,5 +1,7 @@
 <template>
-  <Header />
+  <div class="homepage">
+    <Header />
+  </div>
 </template>
 
 <script>
@@ -12,3 +14,9 @@ export default {
   },
 };
 </script>
+
+<style>
+.homepage {
+  font-size: 14px;
+}
+</style>
