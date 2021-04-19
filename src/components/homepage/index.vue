@@ -5,7 +5,7 @@
       @search-country="searchForCountry"
       @fetch-countries="fetchAllCountries"
     />
-    <DropDown />
+    <DropDown @change-filter="searchForRegion" />
     <FlagList :countries="countries" />
   </div>
 </template>
@@ -33,6 +33,13 @@ export default {
     searchForCountry(data) {
       axios
         .get(`https://restcountries.eu/rest/v2/name/${data}`)
+        .then((data) => {
+          this.countries = data.data;
+        });
+    },
+    searchForRegion(data) {
+      axios
+        .get(`https://restcountries.eu/rest/v2/region/${data}`)
         .then((data) => {
           this.countries = data.data;
         });

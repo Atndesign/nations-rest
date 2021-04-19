@@ -7,10 +7,11 @@
       class="dropdown__list"
       :style="{ display: isOpen === true ? 'block' : 'none' }"
     >
-      <li class="list__item">Africa</li>
-      <li class="list__item">America</li>
-      <li class="list__item">Asia</li>
-      <li class="list__item">Europe</li>
+      <li class="list__item" @click="changeFilter">Africa</li>
+      <li class="list__item" @click="changeFilter">America</li>
+      <li class="list__item" @click="changeFilter">Asia</li>
+      <li class="list__item" @click="changeFilter">Europe</li>
+      <li class="list__item" @click="changeFilter">Oceania</li>
     </ul>
   </div>
 </template>
@@ -21,11 +22,16 @@ export default {
   data() {
     return {
       isOpen: false,
+      filter: null,
     };
   },
   methods: {
     openDropDown() {
       this.isOpen = !this.isOpen;
+    },
+    changeFilter(e) {
+      this.filter = e.target.innerText;
+      this.$emit("change-filter", this.filter);
     },
   },
 };
