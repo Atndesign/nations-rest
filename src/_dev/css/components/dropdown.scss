@@ -1,0 +1,30 @@
+.dropdown {
+  padding: 0 (16 / 14) * 1em;
+  position: relative;
+  .dropdown__select {
+    padding: (18 / 14) * 1em (24 / 14) * 1em;
+    width: (200 / 14) * 1em;
+    background-color: $dark-elements;
+    background-image: url("../../assets/img/dropdown.svg");
+    background-repeat: no-repeat;
+    background-position: (218 / 14) * 1em;
+    border: none;
+    color: $dark-text-light-elements;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-bottom: (34 / 14) * 1em;
+  }
+  .dropdown__list {
+    position: absolute;
+    top: 60px;
+    color: $dark-text-light-elements;
+    background-color: $dark-elements;
+    width: (200 / 14) * 1em;
+    padding: (18 / 14) * 1em (24 / 14) * 1em;
+    border-radius: 4px;
+
+    .list__item {
+      margin-bottom: 1em;
+    }
+  }
+}
