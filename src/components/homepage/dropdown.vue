@@ -1,14 +1,14 @@
 <template>
   <div class="dropdown">
     <div class="dropdown__select" @click="openDropDown">
-      Filter by region
+      {{ filter === null ? "Filter by region" : filter }}
     </div>
     <ul
       class="dropdown__list"
       :style="{ display: isOpen === true ? 'block' : 'none' }"
     >
       <li class="list__item" @click="changeFilter">Africa</li>
-      <li class="list__item" @click="changeFilter">America</li>
+      <li class="list__item" @click="changeFilter">Americas</li>
       <li class="list__item" @click="changeFilter">Asia</li>
       <li class="list__item" @click="changeFilter">Europe</li>
       <li class="list__item" @click="changeFilter">Oceania</li>
@@ -31,6 +31,7 @@ export default {
     },
     changeFilter(e) {
       this.filter = e.target.innerText;
+      this.isOpen = !this.isOpen;
       this.$emit("change-filter", this.filter);
     },
   },

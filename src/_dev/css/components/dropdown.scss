@@ -11,7 +11,6 @@
     border: none;
     color: $dark-text-light-elements;
     border-radius: 4px;
-    cursor: pointer;
     margin-bottom: (34 / 14) * 1em;
   }
   .dropdown__list {
@@ -24,7 +23,12 @@
     border-radius: 4px;
 
     .list__item {
-      margin-bottom: 1em;
+      user-select: none;
+      cursor: pointer;
+
+      &:not(:last-child) {
+        margin-bottom: 1em;
+      }
     }
   }
 }
