@@ -64,3 +64,32 @@
     }
   }
 }
+
+@media screen and (min-width: 1440px) {
+  #detail {
+    .infos {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: (145 / 16) * 1em;
+    }
+    .main__infos {
+      display: flex;
+      justify-content: space-between;
+    }
+    .content__borders {
+      display: flex;
+      align-items: center;
+      .borders__title {
+        margin-right: 1em;
+      }
+      .borders__items {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 1em;
+        .borders__item {
+          margin: 0 0.5em;
+        }
+      }
+    }
+  }
+}
