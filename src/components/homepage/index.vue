@@ -21,7 +21,7 @@
       <p class="flags__error">
         {{ this.countries.length === 0 ? "No result found for this" : "" }}
       </p>
-      <FlagList :countries="countries" />
+      <FlagList @view-details="viewDetails" :countries="countries" />
     </div>
   </div>
 </template>
@@ -60,6 +60,9 @@ export default {
           this.isLoading = false;
           this.countries = [];
         });
+    },
+    viewDetails(name) {
+      this.$emit("view-details", name);
     },
     searchForRegion(data) {
       this.isLoading = true;

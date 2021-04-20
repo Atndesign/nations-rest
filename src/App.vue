@@ -1,7 +1,11 @@
 <template>
   <main>
-    <HomePage v-if="!isInDetailMode" />
-    <Details @close-detail="closeDetailView" v-if="isInDetailMode" />
+    <HomePage @view-details="setCountryDetails" v-if="!isInDetailMode" />
+    <Details
+      :country="country"
+      @close-detail="toggleDetailView"
+      v-if="isInDetailMode"
+    />
   </main>
 </template>
 
@@ -18,11 +22,15 @@ export default {
   data() {
     return {
       isInDetailMode: true,
+      country: null,
     };
   },
   methods: {
-    closeDetailView() {
-      console.log("Hello");
+    setCountryDetails(name) {
+      this.toggleDetailView();
+      this.country = name;
+    },
+    toggleDetailView() {
       this.isInDetailMode = !this.isInDetailMode;
     },
   },

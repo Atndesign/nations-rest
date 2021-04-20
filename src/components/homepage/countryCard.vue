@@ -1,5 +1,5 @@
 <template>
-  <div class="country-card">
+  <div class="country-card" @click="$emit('view-details', country.name)">
     <div
       class="country-card__cover"
       :style="{ backgroundImage: 'url(' + country.flag + ')' }"

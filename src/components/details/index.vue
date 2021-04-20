@@ -91,6 +91,7 @@
             class="borders__item"
             v-for="(border, index) in countryInfos.borders"
             :key="index"
+            @click="fecthCountry(border)"
           >
             {{ border }}
           </button>
@@ -111,19 +112,33 @@ export default {
     Header,
     BackBtn,
   },
+  props: {
+    country: String,
+  },
   data() {
     return {
       countryInfos: {},
     };
   },
   mounted() {
-    axios.get("https://restcountries.eu/rest/v2/name/belgium").then((data) => {
-      this.countryInfos = data.data[0];
-    });
+    axios
+      .get(`https://restcountries.eu/rest/v2/name/${this.country}`)
+      .then((data) => {
+        this.countryInfos = data.data[0];
+      });
   },
+
   methods: {
     closeDetailView() {
       this.$emit("close-detail");
+    },
+    fecthCountry(countryCode) {
+      console.log(countryCode);
+      axios
+        .get(`https://restcountries.eu/rest/v2/alpha/${countryCode}`)
+        .then((data) => {
+          this.countryInfos = data.data;
+        });
     },
   },
 };

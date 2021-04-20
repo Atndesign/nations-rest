@@ -1,7 +1,7 @@
 <template>
   <div class="flag-list">
     <li :key="index" v-for="(country, index) in countries">
-      <CountryCard :country="country" />
+      <CountryCard @view-details="viewDetails" :country="country" />
     </li>
   </div>
 </template>
@@ -15,6 +15,11 @@ export default {
   },
   data() {
     return {};
+  },
+  methods: {
+    viewDetails(name) {
+      this.$emit("view-details", name);
+    },
   },
   props: {
     countries: Array,
