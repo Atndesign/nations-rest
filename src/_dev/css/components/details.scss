@@ -1,0 +1,25 @@
+#detail {
+  font-size: 16px;
+  .header {
+    margin-bottom: (40 / 16) * 1em;
+  }
+  .top-controls {
+    padding: 0 (28 /16) * 1em;
+    margin-bottom: (64 / 16) * 1em;
+    .top-controls__back-btn {
+      display: flex;
+      align-items: center;
+      padding: (12 /16) * 1em (24 /16) * 1em;
+      background-color: $dark-elements;
+      color: $dark-text-light-elements;
+      font-size: (14 /16) * 1em;
+      border-radius: 4px;
+      .back-btn__icon {
+        margin-right: (10 / 16) * 1em;
+      }
+    }
+  }
+  .infos {
+    padding: 0 (28 /16) * 1em;
+  }
+}
