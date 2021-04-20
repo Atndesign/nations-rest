@@ -12,6 +12,13 @@ body {
   background-color: $dark-background;
 }
 
+.loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 //Components
 @import "./components/header.scss";
 @import "./components/searchbar.scss";

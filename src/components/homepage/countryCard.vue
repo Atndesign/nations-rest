@@ -11,7 +11,11 @@
         <p class="infos__name">
           Population:
           <span class="infos__value">
-            {{ country.population }}
+            {{
+              country.population
+                .toString()
+                .replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,")
+            }}
           </span>
         </p>
         <p class="infos__name">

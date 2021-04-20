@@ -1,7 +1,17 @@
+.flags__error {
+  text-align: center;
+  font-size: 18px;
+  font-weight: 800;
+  color: $dark-text-light-elements;
+}
 .flag-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 4em;
   list-style: none;
   padding: 0 (56 / 14) * 1em;
   .country-card {
+    cursor: pointer;
     color: $dark-text-light-elements;
     background-color: $dark-elements;
     margin-bottom: (40 / 14) * 1em;
@@ -34,5 +44,18 @@
         font-weight: 300;
       }
     }
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .flag-list {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .flag-list {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    padding: 0 (80 / 14) * 1em;
   }
 }

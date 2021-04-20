@@ -1,12 +1,28 @@
 <template>
   <div class="homepage">
     <Header />
-    <Input
-      @search-country="searchForCountry"
-      @fetch-countries="fetchAllCountries"
-    />
-    <DropDown @change-filter="searchForRegion" />
-    <FlagList :countries="countries" />
+    <div class="top-controls">
+      <Input
+        @search-country="searchForCountry"
+        @fetch-countries="fetchAllCountries"
+      />
+      <DropDown @change-filter="searchForRegion" />
+    </div>
+    <div
+      class="loading"
+      :style="{ display: isLoading === true ? 'block' : 'none' }"
+    >
+      <img class="loader" src="../../assets/img/loader.gif" alt="" srcset="" />
+    </div>
+    <div
+      class="flags"
+      :style="{ display: isLoading === false ? 'block' : 'none' }"
+    >
+      <p class="flags__error">
+        {{ this.countries.length === 0 ? "No result found for this" : "" }}
+      </p>
+      <FlagList :countries="countries" />
+    </div>
   </div>
 </template>
 
@@ -27,25 +43,37 @@ export default {
   data() {
     return {
       countries: [],
+      isLoading: false,
     };
   },
   methods: {
     searchForCountry(data) {
+      this.isLoading = true;
       axios
         .get(`https://restcountries.eu/rest/v2/name/${data}`)
         .then((data) => {
+          this.isLoading = false;
           this.countries = data.data;
+        })
+        .catch(() => {
+          console.log("catch");
+          this.isLoading = false;
+          this.countries = [];
         });
     },
     searchForRegion(data) {
+      this.isLoading = true;
       axios
         .get(`https://restcountries.eu/rest/v2/region/${data}`)
         .then((data) => {
+          this.isLoading = false;
           this.countries = data.data;
         });
     },
     fetchAllCountries() {
+      this.isLoading = true;
       axios.get("https://restcountries.eu/rest/v2/all").then((data) => {
+        this.isLoading = false;
         this.countries = data.data;
       });
     },
