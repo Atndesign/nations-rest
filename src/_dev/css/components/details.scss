@@ -21,5 +21,46 @@
   }
   .infos {
     padding: 0 (28 /16) * 1em;
+    color: $dark-text-light-elements;
+    margin-bottom: (46 / 16) * 1em;
+  }
+  .infos__content {
+    margin-bottom: (50 / 16) * 1em;
+  }
+  .details__flag {
+    width: 100%;
+    margin-bottom: (50 / 16) * 1em;
+  }
+  .content__country-name {
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: 0.02em;
+    margin-bottom: (34 / 16) * 1em;
+  }
+  .content__name {
+    font-weight: 600;
+    margin-bottom: (22 / 16) * 1em;
+  }
+  .content__value {
+    font-weight: 300;
+  }
+  .content__borders {
+    .borders__title {
+      font-size: 16px;
+      letter-spacing: 0.01em;
+      font-weight: 600;
+      margin-bottom: (24 / 16) * 1em;
+    }
+    .borders__items {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      .borders__item {
+        color: $dark-text-light-elements;
+        padding: (8 /16) * 1em (32 /16) * 1em;
+        margin-bottom: 1em;
+        background-color: $dark-elements;
+      }
+    }
   }
 }
