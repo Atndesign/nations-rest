@@ -65,12 +65,15 @@
   }
 }
 
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 992px) {
   #detail {
     .infos {
       display: grid;
       grid-template-columns: 1fr 1fr;
       grid-gap: (145 / 16) * 1em;
+    }
+    .infos__main {
+      padding: (45 / 16) * 1em 0;
     }
     .main__infos {
       display: flex;
