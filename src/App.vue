@@ -21,7 +21,7 @@ export default {
   },
   data() {
     return {
-      isInDetailMode: true,
+      isInDetailMode: false,
       country: null,
     };
   },
